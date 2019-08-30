@@ -100,7 +100,7 @@ class TimerGui(multiprocessing.Process):
         current_dir = os.path.dirname(os.path.realpath(__file__))
         parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
         if "nt" == os.name:
-            self.root.wm_iconbitmap(bitmap = os.path.join(parent_dir, "icon.ico"))
+            self.root.wm_iconbitmap(bitmap=os.path.join(parent_dir, "icon.ico"))
 
         self.gui = TimerCanvas(self.root, TIMER_WIDTH, TIMER_HEIGHT)
         self.gui.configure(background=BG_COLOUR)

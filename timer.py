@@ -1,6 +1,7 @@
 import multiprocessing
-from gui.bomb_timer_gui import TimerGui
-from listener.gamestate_listener import ListenerWrapper
+
+from gui.bomb_timer import TimerGui
+from listener.gamestate import ListenerWrapper
 
 
 def main():
@@ -15,6 +16,7 @@ def main():
     gui.join()
     listener.shutdown()
     listener.join()
+
 
 if __name__ == "__main__":
     main()

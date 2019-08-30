@@ -1,11 +1,9 @@
+from misc.messages import *
+import http.server
 import json
 import multiprocessing
-import http.server
 import socketserver
 import urllib.request
-from misc.config import *
-from misc.messages import *
-
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
 
