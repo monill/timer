@@ -1,9 +1,10 @@
-from tkinter import *
-import time
-import os
 import math
 import multiprocessing
+import os
+import time
 from queue import Empty
+from tkinter import *
+
 from misc.config import *
 from misc.messages import *
 
@@ -11,11 +12,9 @@ from misc.messages import *
 class TimerCanvas(Canvas):
 
     def __init__(self, parent, width, height):
-        Canvas.__init__(self, parent, width=width, height=height,
-                        bd=0, highlightthickness=0, relief='ridge')
+        Canvas.__init__(self, parent, width=width, height=height, bd=0, highlightthickness=0, relief='ridge')
         self.parent = parent
-        self.create_text(
-            TEXT_POSITION, text=IDLE_TEXT, font=FONT, fill=FG_COLOUR)
+        self.create_text(TEXT_POSITION, text=IDLE_TEXT, font=FONT, fill=FG_COLOUR)
         self.start_time = None
         self.stop_timer = False
         self.timer_running = False
@@ -44,8 +43,7 @@ class TimerCanvas(Canvas):
 
     def set_text(self, text, colour=FG_COLOUR):
         self.delete("all")
-        self.create_text(
-            TEXT_POSITION, text=text, font=FONT, fill=colour)
+        self.create_text(TEXT_POSITION, text=text, font=FONT, fill=colour)
 
     def set_time_left(self, seconds):
         time_left_text = create_time_string_from_seconds(seconds)
