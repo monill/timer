@@ -1,9 +1,11 @@
-from misc.messages import *
 import http.server
 import json
 import multiprocessing
 import socketserver
 import urllib.request
+
+from misc.messages import *
+
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
 
@@ -17,6 +19,7 @@ class PostHandler(http.server.SimpleHTTPRequestHandler):
             length = int(self.headers["Content-Length"])
             post_body = self.rfile.read(length).decode("utf-8")
             self.process_post_data(post_body)
+
         self.send_ok_response()
 
     def process_post_data(self, json_string):
@@ -65,8 +68,7 @@ class ListenerWrapper(multiprocessing.Process):
         self.server = None
 
     def run(self):
-        self.server = ListenerServer(
-            ("127.0.0.1", 3000), PostHandler, self.msg_queue)
+        self.server = ListenerServer(("127.0.0.1", 3000), PostHandler, self.msg_queue)
         self.server.serve_forever()
 
     def shutdown(self):
