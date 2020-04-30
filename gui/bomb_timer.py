@@ -23,12 +23,12 @@ class TimerCanvas(Canvas):
         if self.timer_running:
             return
         self.stop_timer = False
-        self.start_time = time.clock()
+        self.start_time = time.perf_counter()
         self.timer_running = True
         self.update_timer()
 
     def update_timer(self):
-        now = time.clock()
+        now = time.perf_counter()
         time_left = BOMB_TIME - (now - self.start_time)
 
         if self.stop_timer:
