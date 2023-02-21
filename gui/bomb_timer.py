@@ -3,10 +3,12 @@ import multiprocessing
 import os
 import time
 from queue import Empty
-from tkinter import *
+from tkinter import Tk, Canvas
 
-from misc.config import *
-from misc.messages import *
+from misc.config import TEXT_POSITION, IDLE_TEXT, FONT, FG_COLOUR, BOMB_TIME, WITH_DEFUSER_THRESHOLD, \
+    WITH_DEFUSER_COLOUR, WITHOUT_DEFUSER_COLOUR, WITHOUT_DEFUSER_THRESHOLD, HURRY_UP_THRESHOLD, HURRY_UP_COLOUR, \
+    GUI_CHECK_MSG_INTERVAL, BG_COLOUR, TIMER_WIDTH, TIMER_HEIGHT
+from misc.messages import BOMB_PLANTED, ROUND_OVER
 
 
 class TimerCanvas(Canvas):
