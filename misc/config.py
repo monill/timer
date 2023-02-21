@@ -1,5 +1,5 @@
 # Gui constants
-TIMER_WIDTH = 200
+TIMER_WIDTH = 250
 TIMER_HEIGHT = 100
 
 IDLE_TEXT = "--:--"
