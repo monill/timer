@@ -4,7 +4,7 @@ import multiprocessing
 import socketserver
 import urllib.request
 
-from misc.messages import *
+from misc.messages import BOMB_PLANTED, ROUND_OVER
 
 
 class PostHandler(http.server.SimpleHTTPRequestHandler):
