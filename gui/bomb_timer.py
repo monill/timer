@@ -95,7 +95,7 @@ class TimerGui(multiprocessing.Process):
     def run(self):
         self.root = Tk()
         self.root.configure(background=BG_COLOUR)
-        self.root.title("GoTimer")
+        self.root.title("CSGO: Timer")
 
         current_dir = os.path.dirname(os.path.realpath(__file__))
         parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
